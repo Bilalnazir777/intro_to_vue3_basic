@@ -10,10 +10,29 @@
   </head>
   <body>
     <div id="app">
-      <h1>Product goes here</h1>
+      <div class="cart">
+        no of item in Cart({{cart.length}})
+
+        <!-- <ul v-if="variant" :load="log(variant)"></ul> -->
+        <!-- {{variant.color}}  -->
+      </div>
+      <product-display
+        :premium="premium"
+        @increment-cart="updatecart"
+        @decrement-cart="delFromCart"
+      ></product-display>
     </div>
 
     <!-- Import Js -->
     <script src="./main.js"></script>
+    <!-- Import component -->
+    <script src="./components/productDisplay.js"></script>
+    <script src="./components/productDetail.js"></script>
+    <script src="./components/reviewForm.js"></script>
+    <script src="./components/reviewList.js"></script>
+    <!--mount app-->
+    <script>
+      const mountedapp = app.mount("#app");
+    </script>
   </body>
 </html>
